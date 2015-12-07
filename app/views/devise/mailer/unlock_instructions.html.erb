@@ -1,7 +1,3 @@
-<p>Hola, bebé <%= @resource.email %>!</p>
 
-<p>Tu cuenta ha sido bloqueado por los intentos fallidos de iniciar en ella.</p>
-
-<p>Haz clic en el siguiente link para desbloquearla:</p>
 
 <p><%= link_to 'Desbloquear mi cuenta', unlock_url(@resource, unlock_token: @token) %></p>
