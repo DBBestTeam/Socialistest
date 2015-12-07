@@ -5,12 +5,12 @@
   </div>
   <h5>
     <%= fa_icon 'shield' %>
-    <%= pluralize(@user.posts_count, 'post') %>
+    <%= pluralize(@user.posts_count, 'publicaciones') %>
   </h5>
   <% if @user.dob.present? %>
     <h5>
       <%= fa_icon @user.sex %>
-      <%= "#{pluralize(age(@user.dob), 'year')} old" %>
+      <%= "#{pluralize(age(@user.dob), 'año')} años" %>
     </h5>
   <% end %>
   <% if @user.location.present? %>
@@ -23,7 +23,7 @@
   <div class="text-center">
     <% unless is_current_user?(@user) %>
       <%= render 'follows/form', user: @user %>
-      <h6><%= 'Follows you' if current_user.followed_by?(@user) %></h6>
+      <h6><%= 'Te sigue' if current_user.followed_by?(@user) %></h6>
     <% end %>
   </div>
 </div>

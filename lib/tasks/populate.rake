@@ -10,12 +10,12 @@ namespace :fill do
     ActsAsVotable::Vote.delete_all
     PublicActivity::Activity.delete_all
 
-    puts 'Creating users'
+    puts 'Creating usuarios'
     puts '=============='
-    genders = ['male', 'female']
+    genders = ['hombre', 'mujer']
     password = 'socify'
 
-    User.populate 20 do |user|
+    User.populate 200 do |user|
       user.name = Faker::Name.name
       user.email = Faker::Internet.email
       user.sex = genders
@@ -42,7 +42,7 @@ namespace :fill do
     puts '=============='
     users = User.all
 
-    15.times do
+    150.times do
       post = Post.new
       post.content = Populator.sentences(2..4)
       post.user = users.sample
@@ -55,7 +55,7 @@ namespace :fill do
 
     posts = Post.all
 
-    15.times do
+    150.times do
       post = posts.sample
       user = users.sample
       comment = post.comments.new
@@ -68,7 +68,7 @@ namespace :fill do
     puts 'Creating Events'
     puts '==============='
 
-    15.times do
+    150.times do
       event = Event.new
       event.name = Populator.words(1..3).titleize
       event.when = Faker::Date.between(2.years.ago, 1.day.from_now)
@@ -80,7 +80,7 @@ namespace :fill do
     puts 'Creating Likes For Posts'
     puts '========================'
 
-    15.times do
+    150.times do
       post = posts.sample
       user = users.sample
       post.liked_by user
@@ -91,7 +91,7 @@ namespace :fill do
     puts '========================='
     events = Event.all
 
-    15.times do
+    150.times do
       event = events.sample
       user = users.sample
       event.liked_by user
@@ -101,7 +101,7 @@ namespace :fill do
     puts 'Creating Comments For Events'
     puts '============================='
 
-    15.times do
+    150.times do
       event = events.sample
       user = users.sample
       comment = event.comments.new

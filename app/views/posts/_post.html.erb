@@ -1,7 +1,7 @@
 <div class="info">
   <%= render 'shared/avatar', user: post.user %>
   <h4 class="name"><%= post.user.name %></h4>
-  <span class="action">Creado  <%= link_to 'publicación', post %></span>
+  <span class="action">creó un <%= link_to 'publicación', post %></span>
 </div>
 <div class="content">
   <span class="text"><%= post.content_html %></span>
@@ -12,8 +12,8 @@
   <% end %>
   <%= render 'shared/created_at', activity: post %>
   <div class="points">
-    <span class="like-count"><%= pluralize(post.cached_votes_up, 'like') %></span>
-    <span class="comments-count"><%= pluralize(post.comments_count, 'comment') %></span>
+    <span class="like-count"><%= pluralize(post.cached_votes_up, 'me gusta') %></span>
+    <span class="comments-count"><%= pluralize(post.comments_count, 'comentario') %></span>
     <div class="pull-right">
       <% if belongs_to_user?(post) %>
         <%= link_to edit_post_path(post), class: 'btn btn-primary btn-sm' do %>

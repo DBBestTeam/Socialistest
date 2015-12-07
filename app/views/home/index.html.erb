@@ -8,7 +8,7 @@
     <div id="activities">
       <% if @activities.empty? %>
         <div class="well">
-          <%= render('shared/no_resource', resources: 'Activities') %>
+          <%= render('shared/no_resource', resources: 'Actividades') %>
         </div>
       <% else %>
         <%= render_activities(@activities, layout: '/shared/activity') %>

@@ -5,8 +5,13 @@
   <div class="col-lg-6 well">
     <h3>Encontrar amigos.</h3>
     <hr>
+    <div class="form-group">
+      <p>Buscar por correo electrónico</p>
+      <%= text_field_tag :comment_text, nil, placeholder: 'ejemplo@ejemplo.com', class: 'form-control' %>
+      <%= button_tag 'Seguir', class: 'btn btn-success' %>
+    </div>
     <div id="users">
-      <%= render(@users) || render('shared/no_resource', resources: 'Users') %>
+      <%= render(@users) || render('shared/no_resource', resources: 'usuarios') %>
     </div>
     <%= render 'shared/paginate', resources: @users %>
   </div>
