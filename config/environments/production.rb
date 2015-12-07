@@ -79,5 +79,16 @@ Rails.application.configure do
 
   config.action_mailer.default_url_options = { host: 'https://socialist-db.herokuapp.com/' }
 
-  config.action_mailer.delivery_method = :letter_opener
+  ActionMailer::Base.delivery_method = :smtp
+  ActionMailer::Base.perform_deliveries = true
+
+  ActionMailer::Base.smtp_settings = {
+    :address              => 'smtp.sendgrid.net',
+    :port                 => '587',
+    :domain               => 'heroku.com',
+    :user_name            => ENV['USERNAME'],
+    :password             => ENV['PASSWORD'],
+    :authentication       => "plain",
+    :enable_starttls_auto => true
+  }
 end
