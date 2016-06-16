@@ -53,5 +53,5 @@ rake fill:data
 * Envíamelos y yo los reviso
 
 ### Issues
-If you find any issue with the app please do raise an issue here https://github.com/sudharti/socify/issues
+Si encuentras algún problema, repórtamelo por aquí.
 
